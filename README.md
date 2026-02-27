@@ -1,16 +1,16 @@
 # WooCommerce Pure Prestige Info
 
-Prosta wtyczka WooCommerce, która wyświetla w koszyku i mini-koszyku box promocyjny z odliczaniem czasu.
+A lightweight WooCommerce plugin that displays a promotional box in the cart and mini-cart with a live countdown timer.
 
-## Co robi
+## Features
 
-- Pokazuje box z grafiką i komunikatem o darmowej zawieszce zapachowej.
-- Startuje timer po pierwszym dodaniu produktu do koszyka.
-- Wspiera widok koszyka i mini-cart (także przy AJAX fragments).
-- Ukrywa box po zakończeniu czasu.
+- Shows a promo box with image and message about a free air freshener.
+- Starts the countdown when the first product is added to the cart.
+- Works in both cart and mini-cart (including WooCommerce AJAX fragments).
+- Hides the box automatically when the timer reaches zero.
 
-## Dane wtyczki
+## Plugin Details
 
-- Nazwa: WooCommerce Pure Prestige Info
-- Wersja: 1.0.0
-- Autor: [goweb.pl](https://goweb.pl)
+- Name: WooCommerce Pure Prestige Info
+- Version: 1.0.0
+- Author: [goweb.pl](https://goweb.pl)

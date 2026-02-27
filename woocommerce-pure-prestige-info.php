@@ -31,7 +31,7 @@ final class WooCommerce_Pure_Prestige_Info {
 		add_action('woocommerce_cart_emptied', array($this, 'reset_timer'));
 		add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
 		add_action('woocommerce_proceed_to_checkout', array($this, 'render_box'));
-		add_action('woocommerce_before_mini_cart', array($this, 'render_box'), 5);
+		add_action('woocommerce_before_mini_cart', array($this, 'render_box'), 15);
 	}
 
 	public function maybe_start_timer(): void {

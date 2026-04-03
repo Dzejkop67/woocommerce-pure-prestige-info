@@ -30,8 +30,8 @@ final class WooCommerce_Pure_Prestige_Info {
 		add_action('woocommerce_add_to_cart', array($this, 'maybe_start_timer'), 10, 0);
 		add_action('woocommerce_cart_emptied', array($this, 'reset_timer'));
 		add_action('wp_enqueue_scripts', array($this, 'enqueue_assets'));
-		add_action('woocommerce_proceed_to_checkout', array($this, 'render_box'));
-		add_action('woocommerce_before_mini_cart', array($this, 'render_box'), 15);
+		add_action('woocommerce_checkout_before_order_review_heading', array($this, 'render_box_desktop'));
+		add_action('woocommerce_before_checkout_form', array($this, 'render_box_mobile'), 100);
 	}
 
 	public function maybe_start_timer(): void {
@@ -82,7 +82,23 @@ final class WooCommerce_Pure_Prestige_Info {
 		);
 	}
 
-	public function render_box(): void {
+	public function render_box_desktop(): void {
+		if (function_exists('wp_is_mobile') && wp_is_mobile()) {
+			return;
+		}
+
+		$this->render_box();
+	}
+
+	public function render_box_mobile(): void {
+		if (function_exists('wp_is_mobile') && !wp_is_mobile()) {
+			return;
+		}
+
+		$this->render_box();
+	}
+
+	private function render_box(): void {
 		$remaining_seconds = $this->get_remaining_seconds();
 		$started_at = $this->get_timer_started_at();
 
